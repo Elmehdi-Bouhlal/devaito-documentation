@@ -94,78 +94,78 @@ Using her slug
 
 | Name | Type | Required | Description |
 |------|------|-----------|-------------|
-| `slug` | string | yes | slug of the category |
+| `slug` | string | yes | slug of the category you can get the slug from the category endpoint |
 | `page` | integer | No | Page number to retrieve (default: `1`) |
 | `per_page` | integer | No | Number of items per page (default: `8`) |
 
 
 ```json
 {
-"products": [
-{
-"id": 8,
-"name": "Salade Cesar Classique",
-"image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a7230cac_image__1593617074735380.jpg",
-"price": 70,
-"devise": "$",
-"url": "https://test10.devaito.com/product/salade-cesar-classique-3",
-"discount_type": 0,
-"discount_amount": 0,
-"brand_name": null,
-"brand_logo": null
-},
-{
-"id": 9,
-"name": "Salade Buddha Veggie",
-"image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a728dfbf_image__1598950002292413.jpg",
-"price": 65,
-"devise": "$",
-"url": "https://test10.devaito.com/product/salade-buddha-veggie-4",
-"discount_type": 0,
-"discount_amount": 0,
-"brand_name": null,
-"brand_logo": null
-},
-{
-"id": 10,
-"name": "Salade Chevre Croustillant",
-"image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a72d6ace_image__1598947582077413.jpg",
-"price": 70,
-"devise": "$",
-"url": "https://test10.devaito.com/product/salade-chevre-croustillant-5",
-"discount_type": 0,
-"discount_amount": 0,
-"brand_name": null,
-"brand_logo": null
-},
-{
-"id": 6,
-"name": "Salade Nordique",
-"image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a715ec82_image__1593617139550380.jpg",
-"price": 75,
-"devise": "$",
-"url": "https://test10.devaito.com/product/salade-nordique-1",
-"discount_type": 0,
-"discount_amount": 0,
-"brand_name": null,
-"brand_logo": null
-},
-{
-"id": 7,
-"name": "Salade Bowl Atlantique",
-"image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a71ce59b_image__1593616999509380.jpg",
-"price": 85,
-"devise": "$",
-"url": "https://test10.devaito.com/product/salade-bowl-atlantique-2",
-"discount_type": 0,
-"discount_amount": 0,
-"brand_name": null,
-"brand_logo": null
-}
-],
-"current_page": 1,
-"last_page": 1,
-"category_selected_name": "Maxi salades"
+    "products": [
+        {
+            "id": 8,
+            "name": "Salade Cesar Classique",
+            "image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a7230cac_image__1593617074735380.jpg",
+            "price": 70,
+            "devise": "$",
+            "url": "https://test10.devaito.com/product/salade-cesar-classique-3",
+            "discount_type": 0,
+            "discount_amount": 0,
+            "brand_name": null,
+            "brand_logo": null
+        },
+        {
+            "id": 9,
+            "name": "Salade Buddha Veggie",
+            "image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a728dfbf_image__1598950002292413.jpg",
+            "price": 65,
+            "devise": "$",
+            "url": "https://test10.devaito.com/product/salade-buddha-veggie-4",
+            "discount_type": 0,
+            "discount_amount": 0,
+            "brand_name": null,
+            "brand_logo": null
+        },
+        {
+            "id": 10,
+            "name": "Salade Chevre Croustillant",
+            "image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a72d6ace_image__1598947582077413.jpg",
+            "price": 70,
+            "devise": "$",
+            "url": "https://test10.devaito.com/product/salade-chevre-croustillant-5",
+            "discount_type": 0,
+            "discount_amount": 0,
+            "brand_name": null,
+            "brand_logo": null
+        },
+        {
+            "id": 6,
+            "name": "Salade Nordique",
+            "image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a715ec82_image__1593617139550380.jpg",
+            "price": 75,
+            "devise": "$",
+            "url": "https://test10.devaito.com/product/salade-nordique-1",
+            "discount_type": 0,
+            "discount_amount": 0,
+            "brand_name": null,
+            "brand_logo": null
+        },
+        {
+            "id": 7,
+            "name": "Salade Bowl Atlantique",
+            "image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a71ce59b_image__1593616999509380.jpg",
+            "price": 85,
+            "devise": "$",
+            "url": "https://test10.devaito.com/product/salade-bowl-atlantique-2",
+            "discount_type": 0,
+            "discount_amount": 0,
+            "brand_name": null,
+            "brand_logo": null
+        }
+    ],
+    "current_page": 1,
+    "last_page": 1,
+    "category_selected_name": "Maxi salades"
 }
 ```
 
@@ -1215,7 +1215,7 @@ By default your store that you are using has no configuration , so you need to c
 
 | Key | Type | Description |
 |-----|------|-------------|
-| **store-currency** | string | Optional The currency code the user is browsing in (e.g., MAD, USD, EUR). in case if you don't have a currency code, the API will use the default currency. |
+| **store-currency** | string | Optional The currency code that **user** is using in the application ex (e.g., MAD, USD, EUR). in case if you don't have a currency code, the API will use the default currency. |
 | **Accept** | string | **Required.** Must be `application/json`. |
 
 ---
