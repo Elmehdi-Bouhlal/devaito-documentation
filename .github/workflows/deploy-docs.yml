@@ -30,6 +30,15 @@ jobs:
           mkdir -p blade-temp
           cat site/index.html > blade-temp/index.blade.php
 
+      - name: Clean target directory
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: 95.216.202.68
+          username: ai-agent-github-action
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            rm -rf /var/www/html/devaito/public/api-documentation/*
+
       - name: Deploy static site to server
         uses: appleboy/scp-action@v0.1.7
         with:
