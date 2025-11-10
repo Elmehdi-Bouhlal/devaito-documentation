@@ -36,7 +36,7 @@ jobs:
           host: 95.216.202.68
           username: ai-agent-github-action
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "site/*"
+          source: "site"
           target: "/var/www/html/devaito/public/api-documentation"
           recursive: true
           overwrite: true
