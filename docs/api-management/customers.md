@@ -53,7 +53,7 @@ Registers a new customer account and returns a token.
 }
 ```
 
-**Example response:**
+**Example response :**
 ```json
 {
   "success": true,
