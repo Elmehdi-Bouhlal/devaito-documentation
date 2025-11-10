@@ -1,0 +1,52 @@
+name: Deploy MkDocs Documentation
+
+on:
+  push:
+    branches: [master] # ou "master" selon ta branche
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install MkDocs
+        run: |
+          pip install mkdocs
+
+      - name: Build documentation
+        run: |
+          mkdocs build
+
+      - name: Prepare Blade template
+        run: |
+          mkdir -p blade-temp
+          cat site/index.html > blade-temp/index.blade.php
+
+      - name: Deploy static site to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 95.216.202.68
+          username: ai-agent-github-action
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "site/*"
+          target: "/var/www/html/devaito/public/api-documentation"
+          recursive: true
+          overwrite: true
+
+      - name: Deploy Blade template to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 95.216.202.68
+          username: ai-agent-github-action
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "blade-temp/index.blade.php"
+          target: "/var/www/html/devaito/resources/views/base/builder/api-documentation"
+          overwrite: true
