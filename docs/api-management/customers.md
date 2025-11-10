@@ -1,6 +1,15 @@
 # 🧑‍💼 API Clients
 
-This module groups together the endpoints linked to customer management (authentication, user info, shopping cart, payments, etc.).
+This module groups together the endpoints linked to customer management (authentication, user info, shopping cart, payments, etc
+
+
+!!! tip "💱 Currency Update"
+    A new header `store-currency` has been added to all payment and product endpoints.
+    - It accepts a **currency code** (e.g., `MAD`, `USD`, `EUR`).
+    - If omitted, the **default currency** will be applied automatically.
+
+    ✅ Using the correct currency ensures **accurate pricing**, **correct discount calculations**, and better consistency across your API.
+
 
 !!! note "Base URL Notice"
     The base URL for these endpoints depends on the subdomain of your store.
@@ -75,6 +84,91 @@ Registers a new customer account and returns a token.
 ## 📦 Products
 !!! info "Token Requirement"
     🔓 **No authentication required For all endpoint related to products**
+
+### GET `/fetch-all-products-category` 🟢
+
+By using this endpoint you well be able to fetch all products that existe on a specific category
+Using her slug
+
+**params**
+
+| Name | Type | Required | Description |
+|------|------|-----------|-------------|
+| `slug` | string | yes | slug of the category |
+| `page` | integer | No | Page number to retrieve (default: `1`) |
+| `per_page` | integer | No | Number of items per page (default: `8`) |
+
+
+```json
+{
+"products": [
+{
+"id": 8,
+"name": "Salade Cesar Classique",
+"image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a7230cac_image__1593617074735380.jpg",
+"price": 70,
+"devise": "$",
+"url": "https://test10.devaito.com/product/salade-cesar-classique-3",
+"discount_type": 0,
+"discount_amount": 0,
+"brand_name": null,
+"brand_logo": null
+},
+{
+"id": 9,
+"name": "Salade Buddha Veggie",
+"image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a728dfbf_image__1598950002292413.jpg",
+"price": 65,
+"devise": "$",
+"url": "https://test10.devaito.com/product/salade-buddha-veggie-4",
+"discount_type": 0,
+"discount_amount": 0,
+"brand_name": null,
+"brand_logo": null
+},
+{
+"id": 10,
+"name": "Salade Chevre Croustillant",
+"image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a72d6ace_image__1598947582077413.jpg",
+"price": 70,
+"devise": "$",
+"url": "https://test10.devaito.com/product/salade-chevre-croustillant-5",
+"discount_type": 0,
+"discount_amount": 0,
+"brand_name": null,
+"brand_logo": null
+},
+{
+"id": 6,
+"name": "Salade Nordique",
+"image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a715ec82_image__1593617139550380.jpg",
+"price": 75,
+"devise": "$",
+"url": "https://test10.devaito.com/product/salade-nordique-1",
+"discount_type": 0,
+"discount_amount": 0,
+"brand_name": null,
+"brand_logo": null
+},
+{
+"id": 7,
+"name": "Salade Bowl Atlantique",
+"image": "https://test10.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a71ce59b_image__1593616999509380.jpg",
+"price": 85,
+"devise": "$",
+"url": "https://test10.devaito.com/product/salade-bowl-atlantique-2",
+"discount_type": 0,
+"discount_amount": 0,
+"brand_name": null,
+"brand_logo": null
+}
+],
+"current_page": 1,
+"last_page": 1,
+"category_selected_name": "Maxi salades"
+}
+```
+
 
 ### GET `/popular-products`
 
@@ -1095,12 +1189,12 @@ By using this endpoint you can get the currency of the store
 
 ### POST `/make-payment` 🟢
 
+!!! warning "Token Requirement"
+    🔒 **Requires authentication**
+
 Creates a payment intent for an entire shopping cart.
 
 by using this endpoint you well have the ability to get credentials that you need to make a payment using sdk in your app mobile
-
-!!! warning "Token Requirement"
-    🔒 **Requires authentication**
 
 !!! info "Diffrence between payment methods"
 
