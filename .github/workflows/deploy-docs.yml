@@ -68,3 +68,16 @@ jobs:
           source: "blade-temp/index.blade.php"
           target: "/var/www/html/devaito/resources/views/base/builder/api-documentation"
           overwrite: true
+
+      - name: Remove site folder on server if exists
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: 95.216.202.68
+          username: ai-agent-github-action
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/html/devaito/public/api-documentation
+            if [ -d "site" ]; then
+              cp -r site/. .
+              rm -rf site
+            fi
