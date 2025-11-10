@@ -1,0 +1,3288 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../usage/">
+      
+      
+        <link rel="next" href="../../code-management/upload/">
+      
+      
+      <link rel="icon" href="https://www.devaito.com/public/backend/assets/img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Clients (🆕 NEW) - Devaito v2.0 Developer Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="#472af2" data-md-color-accent="#472af2">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-clients" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Devaito v2.0 Developer Guide" class="md-header__button md-logo" aria-label="Devaito v2.0 Developer Guide" data-md-component="logo">
+      
+  <img src="https://www.devaito.com/public/backend/assets/img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Devaito v2.0 Developer Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Clients (🆕 NEW)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Devaito v2.0 Developer Guide" class="md-nav__button md-logo" aria-label="Devaito v2.0 Developer Guide" data-md-component="logo">
+      
+  <img src="https://www.devaito.com/public/backend/assets/img/favicon.png" alt="logo">
+
+    </a>
+    Devaito v2.0 Developer Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home / Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/creation-login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creation / Login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/available-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Available APIs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Start Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Application Management
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Application Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../app-management/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../app-management/collaborators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Collaborator Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../app-management/deletion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deletion / Archiving
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Management
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            API Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API List & Descriptions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Clients (🆕 NEW)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clients (🆕 NEW)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#customer-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Customer Authentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔐 Customer Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-login-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /login-customer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-register-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /register-customer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#products" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Products
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-popular-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /popular-products 🟢
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-product-detailsslug" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /product-details/{slug}
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-fetch-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /fetch-categories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-fetch-all-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /fetch-all-products
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-search-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /search-products
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      👤 User Information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="👤 User Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-log-out-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /log-out-customer 🟢
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-update-profile-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /update-profile-customer 🟢
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-user-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /user-customer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-payment-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      💳 Active Payment Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💳 Active Payment Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-active-payment-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /active-payment-methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shopping-cart" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛒 Shopping Cart
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛒 Shopping Cart">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete-cartclear" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /cart/clear 🟢
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-cartremove-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /cart/remove-item 🟢
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-cartlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /cart/list 🟢
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-cartadd" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /cart/add
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛍️ Checkout 🟢
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛍️ Checkout 🟢">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-get-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /get-state
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-get-cities-of-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /get-cities-of-state
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-get-countries" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /get-countries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-get-shipping-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /get-shipping-options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Common Issues / Tips
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Code Upload & Management
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Code Upload & Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code-management/upload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Upload Methods
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code-management/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code Formats & Conventions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code-management/validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validation & Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Collaboration
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Collaboration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collaboration/add-remove/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adding/Removing Collaborators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collaboration/roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roles & Permissions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collaboration/best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Team Best Practices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    FAQ & Troubleshooting
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            FAQ & Troubleshooting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/solutions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Common Solutions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendices
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Appendices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/api-references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/release-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Release Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    External Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#customer-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Customer Authentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔐 Customer Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-login-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /login-customer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-register-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /register-customer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#products" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Products
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-popular-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /popular-products 🟢
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-product-detailsslug" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /product-details/{slug}
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-fetch-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /fetch-categories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-fetch-all-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /fetch-all-products
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-search-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /search-products
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      👤 User Information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="👤 User Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-log-out-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /log-out-customer 🟢
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-update-profile-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /update-profile-customer 🟢
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-user-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /user-customer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#active-payment-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      💳 Active Payment Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💳 Active Payment Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-active-payment-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /active-payment-methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shopping-cart" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛒 Shopping Cart
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛒 Shopping Cart">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete-cartclear" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /cart/clear 🟢
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-cartremove-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /cart/remove-item 🟢
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-cartlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /cart/list 🟢
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-cartadd" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /cart/add
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛍️ Checkout 🟢
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛍️ Checkout 🟢">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-get-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /get-state
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-get-cities-of-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /get-cities-of-state
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-get-countries" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /get-countries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-get-shipping-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /get-shipping-options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Common Issues / Tips
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api-clients">🧑‍💼 API Clients</h1>
+<p>This module groups together the endpoints linked to customer management (authentication, user info, shopping cart, payments, etc.).</p>
+<div class="admonition note">
+<p class="admonition-title">Base URL Notice</p>
+<p>The base URL for these endpoints depends on the subdomain of your store.
+For example, if your store is accessible at <strong><code>https://test10.devaito.com</code></strong>,
+then your API base URL will be:
+<strong><code>https://test10.devaito.com/api</code></strong></p>
+</div>
+<hr />
+<h2 id="customer-authentication">🔐 Customer Authentication</h2>
+<h3 id="post-login-customer">POST <code>/login-customer</code></h3>
+<p>Authenticates an existing customer and returns an access token.</p>
+<div class="admonition info">
+<p class="admonition-title">Token Requirement</p>
+<p>🔓 <strong>No authentication required</strong></p>
+</div>
+<p><strong>Request body:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;userFalah1@gmail.com&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;userFalah1@gmail.com&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Example response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;325|hrY289rdJ9Y1MvnXVB45lQ9dQkvdlAeWhvt88kBe&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="post-register-customer">POST <code>/register-customer</code></h3>
+<p>Registers a new customer account and returns a token.</p>
+<div class="admonition info">
+<p class="admonition-title">Token Requirement</p>
+<p>🔓 <strong>No authentication required</strong></p>
+</div>
+<p><strong>Request body:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testq1q23q214112234@test.com&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12313123123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test234234&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;password_confirmation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test234234&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Example response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testq1q23q214112234@test.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uid&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;phone_with_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12313123123&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;phone_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12313123123&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;verified_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;327|yZGp2fGZcvmdwQNH4Mo29giyEb0fJrPkGHHtE3a9&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="products">📦 Products</h2>
+<div class="admonition info">
+<p class="admonition-title">Token Requirement</p>
+<p>🔓 <strong>No authentication required For all endpoint related to products</strong></p>
+</div>
+<h3 id="get-popular-products">GET <code>/popular-products</code> 🟢</h3>
+<p>this endpoint will return a list of popular products based on the number of sales</p>
+<p><strong>params</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>integer</td>
+<td>No</td>
+<td>Page number to retrieve (default: <code>1</code>)</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>integer</td>
+<td>No</td>
+<td>Number of items per page (default: <code>8</code>)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Universal Language Translator&quot;,
+            &quot;permalink&quot;: &quot;httpsexamplecomuniversal-language-translator&quot;,
+            &quot;thumbnail_image&quot;: &quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;,
+            &quot;orders_count&quot;: 0,
+            &quot;orders_sum_unit_price&quot;: null,
+            &quot;orders_sum_quantity&quot;: null
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;English Grammar Workbook&quot;,
+            &quot;permalink&quot;: &quot;httpsexamplecomenglish-grammar-workbook&quot;,
+            &quot;thumbnail_image&quot;: &quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;,
+            &quot;orders_count&quot;: 0,
+            &quot;orders_sum_unit_price&quot;: null,
+            &quot;orders_sum_quantity&quot;: null
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;name&quot;: &quot;Interactive English Vocabulary App&quot;,
+            &quot;permalink&quot;: &quot;httpsexamplecominteractive-english-vocabulary-app&quot;,
+            &quot;thumbnail_image&quot;: &quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;,
+            &quot;orders_count&quot;: 0,
+            &quot;orders_sum_unit_price&quot;: null,
+            &quot;orders_sum_quantity&quot;: null
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;name&quot;: &quot;English Idioms and Phrases Guide&quot;,
+            &quot;permalink&quot;: &quot;httpsexamplecomenglish-idioms-and-phrases-guide&quot;,
+            &quot;thumbnail_image&quot;: &quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;,
+            &quot;orders_count&quot;: 0,
+            &quot;orders_sum_unit_price&quot;: null,
+            &quot;orders_sum_quantity&quot;: null
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;Wooden Handle Steel Gardening Tools Small Shovel&quot;,
+            &quot;permalink&quot;: &quot;wooden-handle-steel-gardening-tools-small-shovel&quot;,
+            &quot;thumbnail_image&quot;: &quot;https://treasurex.devaito.com/public/tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/68f744b306031_5f6aac0d-1764-41b4-ac74-601c34ee52f5.jpg&quot;,
+            &quot;orders_count&quot;: 0,
+            &quot;orders_sum_unit_price&quot;: null,
+            &quot;orders_sum_quantity&quot;: null
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Trendy Retro Hand Women&#39;s Bag Korean Style Niche&quot;,
+            &quot;permalink&quot;: &quot;trendy-retro-hand-womens-bag-korean-style-niche&quot;,
+            &quot;thumbnail_image&quot;: &quot;https://treasurex.devaito.com/public/tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/68f744c974868_6714bb43-bce4-471d-b5b0-24e6e587a6a8.jpg&quot;,
+            &quot;orders_count&quot;: 0,
+            &quot;orders_sum_unit_price&quot;: null,
+            &quot;orders_sum_quantity&quot;: null
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;name&quot;: &quot;Retro Plus Size Loose Sports Knee Length Shorts&quot;,
+            &quot;permalink&quot;: &quot;retro-plus-size-loose-sports-knee-length-shorts&quot;,
+            &quot;thumbnail_image&quot;: &quot;https://treasurex.devaito.com/public/tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/68f7559e8d04d_83428bac-0d0c-42eb-96c0-bbecd5b8a71e.jpg&quot;,
+            &quot;orders_count&quot;: 0,
+            &quot;orders_sum_unit_price&quot;: null,
+            &quot;orders_sum_quantity&quot;: null
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;name&quot;: &quot;pizza&quot;,
+            &quot;permalink&quot;: &quot;pizza&quot;,
+            &quot;thumbnail_image&quot;: &quot;https://treasurex.devaito.com/public//tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/2025/Oct/YYXLfDGHIkqaotWtDNotiujt9P3gNmJvs07pni7P.webp&quot;,
+            &quot;orders_count&quot;: 0,
+            &quot;orders_sum_unit_price&quot;: null,
+            &quot;orders_sum_quantity&quot;: null
+        }
+    ],
+    &quot;pagination&quot;: {
+        &quot;items_per_page&quot;: 10,
+        &quot;total_items&quot;: 8,
+        &quot;current_page&quot;: 1,
+        &quot;total_pages&quot;: 1
+    }
+}
+</code></pre></div>
+<h3 id="get-product-detailsslug">GET <code>/product-details/{slug}</code></h3>
+<div class="admonition important">
+<p class="admonition-title">important note</p>
+<p>This endpoint has two type of response (output):</p>
+<ul>
+<li>
+<p>If the product is basic product , it well return product details with a specific format.</p>
+</li>
+<li>
+<p>If the product is customizable product , it well return product details with a specific format.</p>
+</li>
+</ul>
+</div>
+<p>to know which format you need to use you need to read at first this key in the response <code>product_type</code> , how tell you which type of product you have in the example below you well have the response with the format of customizable product and basic product</p>
+<p><strong>Example response of basic product:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;product_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;customizable&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MENU BOSTON BRGR (SPICY)&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;thumbnail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://picksssss.devaito.com/public/tenant/tenant10e9818b-3e6f-4ae4-aa41-3fd5035d8c0b/2025/08/screenshot-2025-07-23-124317-68907f0ba8053.jpg&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;gallery&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;https://picksssss.devaito.com/public/tenant/tenant10e9818b-3e6f-4ae4-aa41-3fd5035d8c0b/2025/08/screenshot-2025-07-23-124317-68907f0ba8053.jpg&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;base_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;oldPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;options_groups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">626</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;group_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FAITES VOTRE CHOIX&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;min_options&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;max_options&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4559</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FRITES&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4560</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;POUTINE&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4561</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CHEEZY FRIES&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4562</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CHICKN POUTINE&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">627</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;group_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BOISSONS&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;min_options&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;max_options&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4563</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MILKSHAKE FRAISE&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4564</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PEPSI&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4565</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIRINDA ORANGE&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4566</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIRINDA CITRON&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4567</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7UP&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4568</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIRINDA TROPICAL&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4569</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WATER 33CL&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">628</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;group_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXTRA&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;min_options&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;max_options&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4570</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXTRA EMMENTAL&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.50&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4571</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXTRA BOEUF&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.50&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4572</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXTRA JALAPENOS&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.50&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4573</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXTRA CRISPY CHICKEN&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.50&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4574</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXTRA CHEDDAR&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.50&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4575</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXTRA CHAMPIGNONS SAUTÉS&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.50&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4576</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXTRA OIGNONS CARAMELISEES&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.50&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4577</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXTRA ŒUF A CHEVAL&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.50&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4578</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXTRA BACON HALAL&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4579</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXTRA SAUCE&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.30&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4580</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TOMATE&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.25&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4581</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SALADE&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.25&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">629</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;group_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PERSONNALISEZ VOTRE BURGER&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;min_options&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;max_options&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4582</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SANS FROMAGE&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4583</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SANS OIGNION&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4584</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SANS OIGNION&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4585</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;option_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SANS SAUCE&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;stock&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;qty_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;has_options&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;symbol_devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Example response of basic product:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;product_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;standard&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">108</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PISTACHE FRAMBOISE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;brand&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;product_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;supplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;permalink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pistache-framboise&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;conditions&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;has_variant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;discount_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;pdf_specifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;thumbnail_image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;174&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;video_link&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_featured&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;max_item_on_purchase&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;min_item_on_purchase&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;low_stock_quantity_alert&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_authentic&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;has_warranty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;has_replacement_warranty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;warrenty_days&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_refundable&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;shipping_location_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_active_cod&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_active_free_shipping&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;cod_location_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;anywhere&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_active_attatchment&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;attatchment_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;shipping_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_apply_multiple_qty_shipping_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_enable_tax&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;tax_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;id_cj&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;profil_imported_countries&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;has_options&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-07-24 11:51:13&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-09 17:27:11&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_approved&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;id_lacaisse&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;colorImages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;colorsSectionNew&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;prices&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">108</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;product_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">108</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;sku&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;purchase_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;unit_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-07-24 11:51:13&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-06 14:29:21&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;discount_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;amount_discount&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;has_color&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;has_color_photo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;thumbnail_image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/tenant/tenant10e9818b-3e6f-4ae4-aa41-3fd5035d8c0b/2025/Jul/G4hKuday2XXOeMr1RBXpWEInStKU1bU1U3k2skWX.webp&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;galleryImagesLeft&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;image_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/tenant/tenant10e9818b-3e6f-4ae4-aa41-3fd5035d8c0b/2025/Jul/G4hKuday2XXOeMr1RBXpWEInStKU1bU1U3k2skWX.webp&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;upload_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">174</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;symbol_devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;has_variant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;variantsDataNew&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;variantsDataPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;categories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CHOCOLAT&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;total_reviews&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;average_rating&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="get-fetch-categories">GET <code>/fetch-categories</code></h3>
+<p>Return all product categories</p>
+<p><strong>Query Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>integer</td>
+<td>No</td>
+<td>Page number to retrieve (default: <code>1</code>)</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>integer</td>
+<td>No</td>
+<td>Number of items per page (default: <code>10</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;entities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Home Improvement&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;home-improvement&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;home-improvement&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bags &amp; Shoes&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bags-shoes&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bags-shoes&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Men&#39;s Clothing&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mens-clothing&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mens-clothing&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Electronics&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;electronics&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;electronics&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Home &amp; Garden&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;home-garden&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;home-garden&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fashion&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fashion&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fashion&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Beauty &amp; Personal Care&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;beauty-personal-care&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;beauty-personal-care&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sports &amp; Outdoors&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sports-outdoors&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sports-outdoors&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Toys &amp; Games&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;toys-games&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;toys-games&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Books &amp; Stationery&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;books-stationery&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;books-stationery&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;items_per_page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;total_items&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;current_page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;total_pages&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="get-fetch-all-products">GET <code>/fetch-all-products</code></h3>
+<p>Return all products with a pagination that you can use to fetch more data</p>
+<p>To switch between pages , use the <code>page</code> query parameter.</p>
+<p>example of format :</p>
+<p><strong><code>https://picksssss.devaito.com/api/fetch-all-products?page=2</code></strong></p>
+<p><strong>Query Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>integer</td>
+<td>No</td>
+<td>Page number to retrieve (default: <code>1</code>)</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>integer</td>
+<td>No</td>
+<td>Number of items per page (default: <code>8</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;products&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pizza&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pizza&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public//tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/2025/Oct/YYXLfDGHIkqaotWtDNotiujt9P3gNmJvs07pni7P.webp&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAD&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/product/pizza&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_logo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;categories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Retro Plus Size Loose Sports Knee Length Shorts&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;retro-plus-size-loose-sports-knee-length-shorts&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/68f7559e8d04d_83428bac-0d0c-42eb-96c0-bbecd5b8a71e.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4.86&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAD&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/product/retro-plus-size-loose-sports-knee-length-shorts&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_logo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;categories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Men&#39;s Clothing&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bottoms&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Man Shorts&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Trendy Retro Hand Women&#39;s Bag Korean Style Niche&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;trendy-retro-hand-womens-bag-korean-style-niche&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/68f744c974868_6714bb43-bce4-471d-b5b0-24e6e587a6a8.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4.86&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAD&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/product/trendy-retro-hand-womens-bag-korean-style-niche&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_logo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;categories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bags &amp; Shoes&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Women&#39;s Luggage &amp; Bags&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Shoulder Bags&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wooden Handle Steel Gardening Tools Small Shovel&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wooden-handle-steel-gardening-tools-small-shovel&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/68f744b306031_5f6aac0d-1764-41b4-ac74-601c34ee52f5.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12.35&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAD&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/product/wooden-handle-steel-gardening-tools-small-shovel&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_logo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;categories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tools&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Garden Tools&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Home Improvement&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Universal Language Translator&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;httpsexamplecomuniversal-language-translator&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;49.99&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAD&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/product/httpsexamplecomuniversal-language-translator&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_logo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;categories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Electronics&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;English Grammar Workbook&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;httpsexamplecomenglish-grammar-workbook&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;19.99&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAD&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/product/httpsexamplecomenglish-grammar-workbook&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_logo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;categories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Home &amp; Garden&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Interactive English Vocabulary App&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;httpsexamplecominteractive-english-vocabulary-app&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9.99&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAD&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/product/httpsexamplecominteractive-english-vocabulary-app&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_logo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;categories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fashion&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;English Idioms and Phrases Guide&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;httpsexamplecomenglish-idioms-and-phrases-guide&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;14.99&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAD&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/product/httpsexamplecomenglish-idioms-and-phrases-guide&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;discount_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;brand_logo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;categories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Beauty &amp; Personal Care&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;items_per_page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;total_items&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;current_page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;total_pages&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="get-search-products">GET <code>/search-products</code></h3>
+<p>Return search results of product using the provided query parameters.</p>
+<p>To use this endpoint, you need to provide the following query parameters:</p>
+<p><strong>params</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>query</code></td>
+<td>String</td>
+<td>yes</td>
+<td>key world</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>integer</td>
+<td>No</td>
+<td>Number of items per page (default: <code>5</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>example of format :</p>
+<p><strong><code>https://picksssss.devaito.com/api/search-products?query=pizza&amp;limit=10</code></strong></p>
+<p><strong>Example response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pizza&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4137763734340294</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id_product&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;permalink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pizza&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public//tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/2025/Oct/YYXLfDGHIkqaotWtDNotiujt9P3gNmJvs07pni7P.webp&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAD&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Universal Language Translator&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3665048622163059</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id_product&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;permalink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;httpsexamplecomuniversal-language-translator&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">49.99</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAD&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Trendy Retro Hand Women&#39;s Bag Korean Style Niche&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.36506165778724786</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id_product&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;permalink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;trendy-retro-hand-womens-bag-korean-style-niche&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/68f744c974868_6714bb43-bce4-471d-b5b0-24e6e587a6a8.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.86</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAD&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;English Grammar Workbook&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3639645343396562</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id_product&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;permalink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;httpsexamplecomenglish-grammar-workbook&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">19.99</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAD&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;English Idioms and Phrases Guide&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3594667918624297</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id_product&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;permalink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;httpsexamplecomenglish-idioms-and-phrases-guide&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">14.99</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;devise&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAD&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;burger&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;total_results&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="user-information">👤 User Information</h2>
+<h3 id="post-log-out-customer">POST <code>/log-out-customer</code> 🟢</h3>
+<p>By using this endpoint, you can log out from the application.</p>
+<div class="admonition warning">
+<p class="admonition-title">Token Requirement</p>
+<p>🔒 <strong>Requires authentication</strong>
+Include your token in the <code>Authorization</code> header as follows:
+<div class="highlight"><pre><span></span><code>Authorization: Bearer &lt;token&gt;
+</code></pre></div></p>
+</div>
+<p><strong>Response Example</strong>
+<div class="highlight"><pre><span></span><code>{
+    &quot;status&quot;: true
+}
+</code></pre></div></p>
+<h3 id="post-update-profile-customer">POST <code>/update-profile-customer</code> 🟢</h3>
+<p>By using this endpoint, you can update your profile information.</p>
+<div class="admonition warning">
+<p class="admonition-title">Token Requirement</p>
+<p>🔒 <strong>Requires authentication</strong>
+Include your token in the <code>Authorization</code> header as follows:
+<div class="highlight"><pre><span></span><code>Authorization: Bearer &lt;token&gt;
+</code></pre></div></p>
+</div>
+<p>no params are required</p>
+<p><strong>Request Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>user name</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>phone number of user</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>email user (unique)</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>binary</td>
+<td>no</td>
+<td>profile image of the user</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>{
+    &quot;success&quot;: true,
+    &quot;customer&quot;: {
+        &quot;image&quot;: null,
+        &quot;name&quot;: &quot;falah test&quot;,
+        &quot;email&quot;: &quot;userFalah1@gmail.com&quot;,
+        &quot;id&quot;: 7,
+        &quot;uid&quot;: null,
+        &quot;phone_with_code&quot;: &quot;2342344534545&quot;,
+        &quot;phone_code&quot;: null,
+        &quot;phone&quot;: &quot;2342344534545&quot;,
+        &quot;verified_at&quot;: null
+    }
+}
+</code></pre></div>
+<h3 id="get-user-customer">GET <code>/user-customer</code></h3>
+<p>Returns the details of the currently authenticated customer.</p>
+<div class="admonition warning">
+<p class="admonition-title">Token Requirement</p>
+<p>🔒 <strong>Requires authentication</strong>
+Include your token in the <code>Authorization</code> header as follows:
+<div class="highlight"><pre><span></span><code>Authorization: Bearer &lt;token&gt;
+</code></pre></div></p>
+</div>
+<p><strong>Example response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uid&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;falah&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;userFalah1@gmail.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;phone_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2342344534545&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;reset_password&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;verified_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;varification_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;is_logedin&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-09-05T21:49:51.000000Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-09-05T21:50:12.000000Z&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="active-payment-methods">💳 Active Payment Methods</h2>
+<h3 id="get-active-payment-methods">GET <code>/active-payment-methods</code></h3>
+<p>Returns a list of available payment methods for the current store.</p>
+<div class="admonition warning">
+<p class="admonition-title">Token Requirement</p>
+<p>🔒 <strong>Requires authentication</strong></p>
+</div>
+<p><strong>Example response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cash On Delivery&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;logo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/public/storage/all_files/2023/Apr/cod_971.png&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instruction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Buy this product on Cash On Delivery&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Paypal&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;logo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/public/storage/all_files/2023/Apr/paypal_49.png&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instruction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pay the amount with Paypal&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stripe&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;logo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/public/storage/all_files/2023/Apr/stipe_53.png&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;instruction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pay the amount with Stripe&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="shopping-cart">🛒 Shopping Cart</h2>
+<h3 id="delete-cartclear">DELETE <code>/cart/clear</code> 🟢</h3>
+<div class="admonition warning">
+<p class="admonition-title">Token Requirement</p>
+<p>🔒 <strong>Requires authentication</strong></p>
+</div>
+<p>By using this endpoint , you can clear the cart of the customer
+no params are required</p>
+<div class="highlight"><pre><span></span><code>{
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;Panier vidé avec succès&quot;
+}
+</code></pre></div>
+<h3 id="delete-cartremove-item">DELETE <code>/cart/remove-item</code> 🟢</h3>
+<div class="admonition warning">
+<p class="admonition-title">Token Requirement</p>
+<p>🔒 <strong>Requires authentication</strong></p>
+</div>
+<p>By using this endpoint , you can remove a specifique item from cart customer</p>
+<p><strong>Request body</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cart_item_id</code></td>
+<td>integer</td>
+<td>yes</td>
+<td>the id of the product in the cart</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>{
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;Item has been removed&quot;
+}
+</code></pre></div>
+<h3 id="get-cartlist">GET <code>/cart/list</code> 🟢</h3>
+<div class="admonition warning">
+<p class="admonition-title">Token Requirement</p>
+<p>🔒 <strong>Requires authentication</strong></p>
+</div>
+<p>By using this endpoint , you well get the list of products in theshopping cart.</p>
+<p><strong>params</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>integer</td>
+<td>No</td>
+<td>Page number to retrieve (default: <code>1</code>)</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>integer</td>
+<td>No</td>
+<td>Number of items per page (default: <code>8</code>)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>{
+    &quot;success&quot;: true,
+    &quot;cartItems&quot;: [
+        {
+            &quot;cart_item_id&quot;: 17,
+            &quot;product_id&quot;: 8,
+            &quot;name&quot;: &quot;Retro Plus Size Loose Sports Knee Length Shorts&quot;,
+            &quot;permalink&quot;: &quot;retro-plus-size-loose-sports-knee-length-shorts&quot;,
+            &quot;image&quot;: &quot;https://treasurex.devaito.com/public/tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/68f7559e8d04d_83428bac-0d0c-42eb-96c0-bbecd5b8a71e.jpg&quot;,
+            &quot;variant&quot;: &quot;Size:XL/color:Pink&quot;,
+            &quot;variant_code&quot;: &quot;1:5/color:4&quot;,
+            &quot;unitPrice&quot;: 4.86,
+            &quot;oldPrice&quot;: 4.86,
+            &quot;quantity&quot;: 2,
+            &quot;attachment&quot;: null,
+            &quot;max_item&quot;: 1000,
+            &quot;min_item&quot;: 0
+        },
+        {
+            &quot;cart_item_id&quot;: 16,
+            &quot;product_id&quot;: 8,
+            &quot;name&quot;: &quot;Retro Plus Size Loose Sports Knee Length Shorts&quot;,
+            &quot;permalink&quot;: &quot;retro-plus-size-loose-sports-knee-length-shorts&quot;,
+            &quot;image&quot;: &quot;https://treasurex.devaito.com/public/tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/68f7559e8d04d_83428bac-0d0c-42eb-96c0-bbecd5b8a71e.jpg&quot;,
+            &quot;variant&quot;: &quot;Size:L/color:Pink&quot;,
+            &quot;variant_code&quot;: &quot;1:4/color:4&quot;,
+            &quot;unitPrice&quot;: 4.86,
+            &quot;oldPrice&quot;: 4.86,
+            &quot;quantity&quot;: 1,
+            &quot;attachment&quot;: null,
+            &quot;max_item&quot;: 1000,
+            &quot;min_item&quot;: 0
+        },
+        {
+            &quot;cart_item_id&quot;: 15,
+            &quot;product_id&quot;: 6,
+            &quot;name&quot;: &quot;Wooden Handle Steel Gardening Tools Small Shovel&quot;,
+            &quot;permalink&quot;: &quot;wooden-handle-steel-gardening-tools-small-shovel&quot;,
+            &quot;image&quot;: &quot;https://treasurex.devaito.com/public/tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/68f744b306031_5f6aac0d-1764-41b4-ac74-601c34ee52f5.jpg&quot;,
+            &quot;variant&quot;: &quot;&quot;,
+            &quot;variant_code&quot;: &quot;color:&quot;,
+            &quot;unitPrice&quot;: 12.35,
+            &quot;oldPrice&quot;: 12.35,
+            &quot;quantity&quot;: 1,
+            &quot;attachment&quot;: null,
+            &quot;max_item&quot;: 1,
+            &quot;min_item&quot;: 0
+        },
+        {
+            &quot;cart_item_id&quot;: 14,
+            &quot;product_id&quot;: 6,
+            &quot;name&quot;: &quot;Wooden Handle Steel Gardening Tools Small Shovel&quot;,
+            &quot;permalink&quot;: &quot;wooden-handle-steel-gardening-tools-small-shovel&quot;,
+            &quot;image&quot;: &quot;https://treasurex.devaito.com/public/tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/68f744b306031_5f6aac0d-1764-41b4-ac74-601c34ee52f5.jpg&quot;,
+            &quot;variant&quot;: &quot;&quot;,
+            &quot;variant_code&quot;: &quot;&quot;,
+            &quot;unitPrice&quot;: 12.35,
+            &quot;oldPrice&quot;: 12.35,
+            &quot;quantity&quot;: 7,
+            &quot;attachment&quot;: null,
+            &quot;max_item&quot;: 1,
+            &quot;min_item&quot;: 0
+        },
+        {
+            &quot;cart_item_id&quot;: 13,
+            &quot;product_id&quot;: 2,
+            &quot;name&quot;: &quot;Universal Language Translator&quot;,
+            &quot;permalink&quot;: &quot;httpsexamplecomuniversal-language-translator&quot;,
+            &quot;image&quot;: &quot;https://treasurex.devaito.com/public/storage/all_files/2023/Mar/img-demo_17.jpg&quot;,
+            &quot;variant&quot;: &quot;&quot;,
+            &quot;variant_code&quot;: &quot;&quot;,
+            &quot;unitPrice&quot;: 49.99,
+            &quot;oldPrice&quot;: 49.99,
+            &quot;quantity&quot;: 1,
+            &quot;attachment&quot;: null,
+            &quot;max_item&quot;: 49,
+            &quot;min_item&quot;: 1
+        }
+    ],
+    &quot;items_per_page&quot;: 10,
+    &quot;total_items&quot;: 5,
+    &quot;current_page&quot;: 1,
+    &quot;total_pages&quot;: 1
+}
+</code></pre></div>
+<h3 id="post-cartadd">POST <code>/cart/add</code></h3>
+<p>Adds a product to the authenticated customer's shopping cart.</p>
+<div class="admonition warning">
+<p class="admonition-title">Token Requirement</p>
+<p>🔒 <strong>Requires authentication</strong></p>
+</div>
+<p><strong>Request body:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>product_id</code></td>
+<td>String / integer</td>
+<td>Yes</td>
+<td>this is the product id</td>
+</tr>
+<tr>
+<td><code>quantity</code></td>
+<td>integer</td>
+<td>Yes</td>
+<td>quantity of items</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>integer</td>
+<td>No</td>
+<td>color id</td>
+</tr>
+<tr>
+<td><code>colorText</code></td>
+<td>String</td>
+<td>No</td>
+<td>color name (ex: red)</td>
+</tr>
+<tr>
+<td><code>variant</code></td>
+<td>Object(JSON)</td>
+<td>No</td>
+<td>variants that has been selected (ex:{"Size":{"parent_id":1,"child_id":4,"child_Name":"L","parent_name":"Size"}})</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;productId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;productName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wooden Handle Steel Gardening Tools Small Shovel&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;productPermalink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wooden-handle-steel-gardening-tools-small-shovel&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;productImage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://treasurex.devaito.com/public/tenant/tenantd74de1f0-e8cc-40e7-954f-b6a6429fc1e8/68f744b306031_5f6aac0d-1764-41b4-ac74-601c34ee52f5.jpg&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;paramsVariantText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;paramsVariant&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;unitPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12.35&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;oldPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">12.35</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;min_item&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;max_item&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;seller&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;shopName&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;shopSlug&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;brand_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;attachment&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;attributes_added&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">        </span><span class="nt">&quot;colors_added&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">        </span><span class="nt">&quot;product_cj&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="checkout">🛍️ Checkout 🟢</h2>
+<h3 id="post-get-state">POST <code>/get-state</code></h3>
+<p>By using this endpoint you will get all states that a city have by passing the city id</p>
+<p><strong>Request Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>city_id</code></td>
+<td>integer</td>
+<td>Yes</td>
+<td>city id ex(2504)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 29576,
+            &quot;name&quot;: &quot;Agadir&quot;
+        }
+    ]
+}
+</code></pre></div>
+<h3 id="post-get-cities-of-state">POST <code>/get-cities-of-state</code></h3>
+<p>By using this endpoint you will get all cities that a country have by passing the country id</p>
+<p><strong>Request Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>country_id</code></td>
+<td>integer</td>
+<td>Yes</td>
+<td>country id ex(148)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 2504,
+            &quot;name&quot;: &quot;Agadir&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2505,
+            &quot;name&quot;: &quot;Casablanca&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2506,
+            &quot;name&quot;: &quot;Chaouia-Ouardigha&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2507,
+            &quot;name&quot;: &quot;Doukkala-Abda&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2508,
+            &quot;name&quot;: &quot;Fes-Boulemane&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2509,
+            &quot;name&quot;: &quot;Gharb-Chrarda-Beni Hssen&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2510,
+            &quot;name&quot;: &quot;Guelmim&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2511,
+            &quot;name&quot;: &quot;Kenitra&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2512,
+            &quot;name&quot;: &quot;Marrakech-Tensift-Al Haouz&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2513,
+            &quot;name&quot;: &quot;Meknes-Tafilalet&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2514,
+            &quot;name&quot;: &quot;Oriental&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2515,
+            &quot;name&quot;: &quot;Oujda&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2516,
+            &quot;name&quot;: &quot;Province de Tanger&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2517,
+            &quot;name&quot;: &quot;Rabat-Sale-Zammour-Zaer&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2518,
+            &quot;name&quot;: &quot;Sala Al Jadida&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2519,
+            &quot;name&quot;: &quot;Settat&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2520,
+            &quot;name&quot;: &quot;Souss Massa-Draa&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2521,
+            &quot;name&quot;: &quot;Tadla-Azilal&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2522,
+            &quot;name&quot;: &quot;Tangier-Tetouan&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2523,
+            &quot;name&quot;: &quot;Taza-Al Hoceima-Taounate&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2524,
+            &quot;name&quot;: &quot;Wilaya de Casablanca&quot;,
+            &quot;code&quot;: null
+        },
+        {
+            &quot;id&quot;: 2525,
+            &quot;name&quot;: &quot;Wilaya de Rabat-Sale&quot;,
+            &quot;code&quot;: null
+        }
+    ]
+}
+</code></pre></div>
+<h3 id="get-get-countries">GET <code>/get-countries</code></h3>
+<p>By using this endpoint you will get the list of countries with their respective codes , to get more countries you need to go to you admin panel and activated</p>
+<div class="highlight"><pre><span></span><code>{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 148,
+            &quot;name&quot;: &quot;Morocco&quot;,
+            &quot;code&quot;: &quot;MA&quot;
+        }
+    ]
+}
+</code></pre></div>
+<h3 id="post-get-shipping-options">POST <code>/get-shipping-options</code></h3>
+<p>By using this endpoint you well get the coast of shipping delivery address specified from the user in the admin panel (by the admin user)</p>
+<p><strong>Request Body</strong></p>
+<div class="admonition info">
+<p class="admonition-title">Token Requirement</p>
+<p>🔓 <strong>All the elements in the request body , you can get it from the checkout form</strong></p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>country_id</code></td>
+<td>integer</td>
+<td>yes</td>
+<td>Page number to retrieve (default: <code>1</code>)</td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>integer</td>
+<td>no</td>
+<td>location id</td>
+</tr>
+<tr>
+<td><code>post_code</code></td>
+<td>string</td>
+<td>no</td>
+<td>postal code of the user</td>
+</tr>
+<tr>
+<td><code>products</code></td>
+<td>string (JSON)</td>
+<td>yes</td>
+<td>all data related of the product</td>
+</tr>
+<tr>
+<td><code>shipping_type</code></td>
+<td>string</td>
+<td>yes</td>
+<td>shipping type (ex:'home_delivery')</td>
+</tr>
+<tr>
+<td><code>state_id</code></td>
+<td>integer</td>
+<td>yes</td>
+<td>state id</td>
+</tr>
+<tr>
+<td><code>state_name</code></td>
+<td>string</td>
+<td>no</td>
+<td>state name</td>
+</tr>
+<tr>
+<td><code>zone</code></td>
+<td>string</td>
+<td>no</td>
+<td>zone name</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>{
+    &quot;success&quot;: true,
+    &quot;shipping_available&quot;: true,
+    &quot;options&quot;: [
+        {
+            &quot;id&quot;: 1760951929254,
+            &quot;product&quot;: &quot;https://treasurex.devaito.com/public/tenant/tenant9075b507-8538-4d3e-8db8-d7affee7e55b/68bb5a715ec82_image__1593617139550380.jpg&quot;,
+            &quot;options&quot;: {
+                &quot;id&quot;: null,
+                &quot;title&quot;: &quot;Home Delivery&quot;,
+                &quot;shipping_cost&quot;: 0,
+                &quot;shipping_time&quot;: null,
+                &quot;shipping_from&quot;: null,
+                &quot;by&quot;: null
+            },
+            &quot;default_option&quot;: {
+                &quot;id&quot;: null,
+                &quot;title&quot;: &quot;Home Delivery&quot;,
+                &quot;shipping_cost&quot;: 0,
+                &quot;shipping_time&quot;: null,
+                &quot;shipping_from&quot;: null,
+                &quot;by&quot;: null
+            },
+            &quot;tax&quot;: 0
+        }
+    ]
+}
+</code></pre></div>
+<h2 id="common-issues-tips">⚠️ Common Issues / Tips</h2>
+<div class="admonition tip">
+<p class="admonition-title">Troubleshooting</p>
+<ul>
+<li>Ensure you use the correct <strong>subdomain</strong> for your store when calling the API.</li>
+<li>Always include the <code>Authorization: Bearer &lt;token&gt;</code> header for authenticated endpoints.</li>
+<li>Use <code>Content-Type: application/json</code> for all POST requests.</li>
+<li>If you receive a <code>401 Unauthorized</code> response, your token may have expired.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "content.tabs.link", "content.badges"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

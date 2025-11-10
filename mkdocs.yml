@@ -1,0 +1,50 @@
+site_name: Devaito v2.0 Developer Guide
+extra_css:
+  - stylesheets/extra.css
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.superfences
+theme:
+  name: material
+  logo: https://www.devaito.com/public/backend/assets/img/favicon.png
+  favicon: https://www.devaito.com/public/backend/assets/img/favicon.png
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.badges
+  palette:
+    scheme: default
+    primary: "#472af2"
+    accent: "#472af2"
+nav:
+  - Home / Introduction: index.md
+  - Getting Started:
+      - Creation / Login: getting-started/creation-login.md
+      - Available APIs: getting-started/available-apis.md
+      - Quick Start Guide: getting-started/quick-start.md
+  - Application Management:
+      - Deployment: app-management/deployment.md
+      - Collaborator Management: app-management/collaborators.md
+      - Deletion / Archiving: app-management/deletion.md
+  - API Management:
+      - API List & Descriptions: api-management/list.md
+      - API Usage: api-management/usage.md
+      - Clients (🆕 NEW): api-management/customers.md
+  - Code Upload & Management:
+      - Upload Methods: code-management/upload.md
+      - Code Formats & Conventions: code-management/formats.md
+      - Validation & Testing: code-management/validation.md
+  - Collaboration:
+      - Adding/Removing Collaborators: collaboration/add-remove.md
+      - Roles & Permissions: collaboration/roles.md
+      - Team Best Practices: collaboration/best-practices.md
+  - FAQ & Troubleshooting:
+      - Frequently Asked Questions: faq/questions.md
+      - Common Solutions: faq/solutions.md
+  - Appendices:
+      - Glossary: appendices/glossary.md
+      - API References: appendices/api-references.md
+      - Release Notes: appendices/release-notes.md
+      - External Resources: appendices/resources.md
