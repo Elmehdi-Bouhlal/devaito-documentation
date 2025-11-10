@@ -1,4 +1,4 @@
-# 🧑‍💼 API Clients
+# 🧑‍💼 API Clients Test
 
 This module groups together the endpoints linked to customer management (authentication, user info, shopping cart, payments, etc.).
 
