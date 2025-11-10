@@ -1,4 +1,4 @@
-# 🧑‍💼 API Clients Test
+# 🧑‍💼 API Clients
 
 This module groups together the endpoints linked to customer management (authentication, user info, shopping cart, payments, etc.).
 
@@ -980,6 +980,116 @@ Returns the details of the currently authenticated customer.
 }
 ```
 
+## ⚙️ Settings 🟢
+
+### GET `/get-info-store`
+
+by using this endpoint you will be able to get the info store including address, logo, and store name of your store
+
+```json
+{
+    "success": true,
+    "data": {
+        "address": "1600 Amphitheatre Parkway, Mountain View, CA, USA",
+        "logo_light": "https://revive.devaito.com/public/tenant/tenantda38d915-ba56-4836-9647-93bde34cdcc0/2025/Nov/dK7P3rXh0TFOEjCfpUXhJ1YTOt2eb6BzbHHFuId5.webp",
+        "logo_dark": "https://revive.devaito.com/public/tenant/tenantda38d915-ba56-4836-9647-93bde34cdcc0/2025/Nov/dK7P3rXh0TFOEjCfpUXhJ1YTOt2eb6BzbHHFuId5.webp",
+        "store_name": "ReVive"
+    }
+}
+```
+
+### GET `/get-theme-store`
+
+By using this endpoint you will be able to get the theme store including colors store and fonts store
+
+
+```json
+{
+    "success": true,
+    "data": {
+        "h1": {
+            "font": "Poppins",
+            "light_color": "#FF6F00",
+            "dark_color": "#FF6F00"
+        },
+        "h2": {
+            "font": "Poppins",
+            "light_color": "#FF6F00",
+            "dark_color": "#FF6F00"
+        },
+        "h3": {
+            "font": "Poppins",
+            "light_color": "#FF6F00",
+            "dark_color": "#FF6F00"
+        },
+        "h4": {
+            "font": "Poppins",
+            "light_color": "#FF6F00",
+            "dark_color": "#FF6F00"
+        },
+        "paragraph": {
+            "font": "Inter",
+            "light_color": "333333",
+            "dark_color": "FFFFFF"
+        },
+        "button": {
+            "light_color": "#FFFFFF",
+            "dark_color": "#FFFFFF",
+            "light_bg": "#FF6F00",
+            "dark_bg": "#FF6F00"
+        },
+        "body": {
+            "light_bg": "#FFFFFF",
+            "dark_bg": "#333333"
+        }
+    }
+}
+```
+
+### GET `/currency`
+
+By using this endpoint you can get the currency of the store
+
+```json
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "name": "Us Dollar",
+            "code": "USD",
+            "symbol": "$",
+            "conversion_rate": 1,
+            "is_default": 0
+        },
+        {
+            "id": 6,
+            "name": "Euro",
+            "code": "Euro",
+            "symbol": "€",
+            "conversion_rate": 1.3,
+            "is_default": 0
+        },
+        {
+            "id": 7,
+            "name": "Pound",
+            "code": "GBP",
+            "symbol": "£",
+            "conversion_rate": 1.25,
+            "is_default": 0
+        },
+        {
+            "id": 8,
+            "name": "Moroccan Dirham",
+            "code": "MAD",
+            "symbol": "MAD",
+            "conversion_rate": 10,
+            "is_default": 1
+        }
+    ]
+}
+```
+
 ## 💳 Payment
 
 
@@ -988,6 +1098,9 @@ Returns the details of the currently authenticated customer.
 Creates a payment intent for an entire shopping cart.
 
 by using this endpoint you well have the ability to get credentials that you need to make a payment using sdk in your app mobile
+
+!!! warning "Token Requirement"
+    🔒 **Requires authentication**
 
 !!! info "Diffrence between payment methods"
 
@@ -1023,15 +1136,13 @@ By default your store that you are using has no configuration , so you need to c
 | **items[].quantity** | integer | **Required.** The quantity of this item. |
 | **items[].color** | string | Optional. The selected color ID. |
 | **items[].variant** | object | Optional. The selected variant object (from product details). |
-| **name** | string | Optional. Customer's full name. Required for CMI and others if the user is a guest. |
-| **email** | string | Optional. Customer's email. Required for CMI and others if the user is a guest. |
-| **phone** | string | Optional. Customer's phone number. Required for CMI. |
-| **address** | string | Optional. Customer's billing address. Required for CMI. |
+| **phone** | string | Optional. Customer's phone number. Optional for CMI. |
+| **address** | string | Optional. Customer's billing address. Optional for CMI. |
 
 
 
 !!! info "Requirement"
-    🔓 **All the elements (name,email,phone,address) , are not required just in case if you are using the CMI payment method  .**
+    🔓 **All the elements (phone,address) , are not required just in case if you are using the CMI payment method  .**
 ---
 
 **Example Body 1 (Simple: For Stripe/PayPal)**
