@@ -1,4 +1,6 @@
 site_name: Devaito v2.0 Developer Guide
+site_url: https://developers.devaito.com/public/api-documentation
+use_directory_urls: false
 extra_css:
   - stylesheets/extra.css
 markdown_extensions:
