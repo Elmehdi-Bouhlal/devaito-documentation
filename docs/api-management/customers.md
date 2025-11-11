@@ -90,6 +90,13 @@ Registers a new customer account and returns a token.
 By using this endpoint you well be able to fetch all products that existe on a specific category
 Using her slug
 
+
+**Headers**
+
+| Name | Type | Required | Description |
+|------|------|-----------|-------------|
+| `store-currency` | string | no | store currency of your app , for example if your store using USD as currency you should send USD as value |
+
 **params**
 
 | Name | Type | Required | Description |
@@ -174,6 +181,14 @@ Using her slug
 
 
 this endpoint will return a list of popular products based on the number of sales
+
+
+**Headers**
+
+| Name | Type | Required | Description |
+|------|------|-----------|-------------|
+| `store-currency` | string | no | store currency of your app , for example if your store using USD as currency you should send USD as value |
+
 
 **params**
 
@@ -278,6 +293,12 @@ this endpoint will return a list of popular products based on the number of sale
     - If the product is customizable product , it well return product details with a specific format.
 
 to know which format you need to use you need to read at first this key in the response `product_type` , how tell you which type of product you have in the example below you well have the response with the format of customizable product and basic product
+
+**Headers**
+
+| Name | Type | Required | Description |
+|------|------|-----------|-------------|
+| `store-currency` | string | no | store currency of your app , for example if your store using USD as currency you should send USD as value |
 
 **Example response of basic product:**
 ```json
@@ -717,6 +738,14 @@ example of format :
 
 **`https://picksssss.devaito.com/api/fetch-all-products?page=2`**
 
+
+**Headers**
+
+| Name | Type | Required | Description |
+|------|------|-----------|-------------|
+| `store-currency` | string | no | store currency of your app , for example if your store using USD as currency you should send USD as value |
+
+
 **Query Parameters**
 
 | Name | Type | Required | Description |
@@ -920,6 +949,14 @@ To use this endpoint, you need to provide the following query parameters:
 |------|------|-----------|-------------|
 | `query` | String | yes | key world |
 | `limit` | integer | No | Number of items per page (default: `5`) |
+
+
+**Headers**
+
+| Name | Type | Required | Description |
+|------|------|-----------|-------------|
+| `store-currency` | string | no | store currency of your app , for example if your store using USD as currency you should send USD as value |
+
 
 example of format :
 
