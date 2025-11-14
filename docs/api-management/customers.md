@@ -1246,9 +1246,31 @@ in case of cmi you can't made payment in the app mobile so you need to use the w
 
 By default your store that you are using has no configuration , so you need to configured in the dashboard first by going here "https://YOUR_STORE_NAME.devaito.com/admin/payments/payment-methods"
 
+
+!!! info "In case you don't have your own credentials, you can use the following for testing , Don't forget to activate sandbox mode in case if you are using this credentials"
+
+**CMI**
+```text
+client_id=600004377
+client_store_key=Wc_a2024@
+```
+
+**Stripe**
+```text
+client_id=pk_test_51RiWkYGa3x1tkwfICqyWZ2gRVE4TVHuS7pGiZXmh8D2uAkoL21MbXY5lJrPU4ZXhnCxfNu3GeWL415hBGxRSXuxp001MawGpyO
+client_secret=sk_test_51RiWkYGa3x1tkwfImeOg1HnaLYu1e4GFaK24B1aaMSP1jcUgJflOEmX9fPc8fNrxcOMrekp4K73QWwOkTCtIIXpw00m5fcwgip
+```
+
+**PayPal**
+```text
+client_id=AT_rQlXlQdFi_CSU9VIuGQe35Od0T18gXZVryNy2Kp-N5GR07SM4iRg2AOYrGK8ERhYfiTP0NBo6-TmZ
+client_secret=ENKAKEQbBPFyzJNBV6cbZ52KN4F3DO0f8AVQypyRUqMXCOYY7nrcFprVlfYoAoN8WAetafdNM2wHn77a
+```
+
+
 ---
 
-**Required Headers**
+**Headers**
 
 | Key | Type | Description |
 |-----|------|-------------|
@@ -1276,7 +1298,7 @@ By default your store that you are using has no configuration , so you need to c
     🔓 **All the elements (phone,address) , are not required just in case if you are using the CMI payment method  .**
 ---
 
-**Example Body 1 (Simple: For Stripe/PayPal)**
+**Example Body 1 (Simple: For Stripe/PayPal/CMI)**
 ```json
 {
     "payment_method_id": 3,
@@ -1291,18 +1313,6 @@ By default your store that you are using has no configuration , so you need to c
             }
         }
     ]
-}
-```
-
-**Example Body 2 (Complete: For CMI)**
-```json
-{
-    "payment_method_id": 4,
-    "items": [ { "id": 6, "quantity": 1 } ],
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "phone": "+1555123456",
-    "address": "123 Main Street"
 }
 ```
 
@@ -1355,24 +1365,6 @@ Open a WebView and POST the `form_data` to the `gateway_url`.
         "CallbackURL": "https://your-api.com/api/payment/cmi/callback",
         "hashAlgorithm": "ver3",
         "HASH": "sRCh9P0ZvD9qrS2AJ8oT..."
-    }
-}
-```
-
----
-
-**Error Response (HTTP 4xx/5xx)**
-
-**HTTP 422 (Unprocessable Entity)**
-
-Validation error — the message explains what is missing.
-
-```json
-{
-    "message": "The phone field is required. (and 1 more error)",
-    "errors": {
-        "phone": ["The phone field is required."],
-        "address": ["The address field is required."]
     }
 }
 ```
