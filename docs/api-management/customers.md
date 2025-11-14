@@ -1372,7 +1372,7 @@ Open a WebView and POST the `form_data` to the `gateway_url`.
 
 ### GET `/active-payment-methods`
 
-Returns a list of available payment methods for the current store.
+Returns a list of availables payments methods for the current store. 
 
 !!! warning "Token Requirement"
     🔒 **Requires authentication**
