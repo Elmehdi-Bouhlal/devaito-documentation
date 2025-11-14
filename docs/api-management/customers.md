@@ -1423,6 +1423,7 @@ Apply a coupon code to the current cart.
 ---
 
 **Headers**
+
 | Key | Type | Required | Description |
 |-----|------|----------|-------------|
 | **store-currency** | string | no | Optional. The currency code used by the user (e.g., MAD, USD, EUR). If not provided, the API will use the store default currency. |
@@ -1430,6 +1431,7 @@ Apply a coupon code to the current cart.
 ---
 
 **Request Body**
+
 | Name | Type | Required | Description |
 |------|------|-----------|-------------|
 | `coupon_code` | string | yes | The coupon code to apply. |
