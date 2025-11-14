@@ -1431,11 +1431,11 @@ By using you can apply a coupon to the cart
 |------|------|-----------|-------------|
 | `coupon_code` | string | yes | the coupon code |
 | `customer_id` | int | no | just in case if user are connected |
-| **items** | array | **Required.** An array of objects representing the cart. |
-| **items[].id** | integer | **Required.** The product ID. |
-| **items[].quantity** | integer | **Required.** The quantity of this item. |
-| **items[].color** | string | Optional. The selected color ID. |
-| **items[].variant** | object | Optional. The selected variant object (from product details). |
+| **items** | array | yes | **Required.** An array of objects representing the cart. |
+| **items[].id** | integer | yes | **Required.** The product ID. |
+| **items[].quantity** | integer | yes | **Required.** The quantity of this item. |
+| **items[].color** | string | no | Optional. The selected color ID. |
+| **items[].variant** | object | no | Optional. The selected variant object (from product details). |
 
 **response format if `coupon_code` is valid**
 ```json
