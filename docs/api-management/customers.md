@@ -1416,6 +1416,51 @@ Returns a list of available payment methods for the current store.
 
 ## 🛒 Shopping Cart
 
+### POST `/cart/apply-coupon` 🟢
+
+By using you can apply a coupon to the cart 
+
+
+**Required Headers**
+| Key | Type | Description |
+|-----|------|-------------|
+| **store-currency** | string | Optional The currency code that **user** is using in the application ex (e.g., MAD, USD, EUR). in case if you don't have a currency code, the API will use the default currency. |
+
+**Request body**
+| Name | Type | Required | Description |
+|------|------|-----------|-------------|
+| `coupon_code` | string | yes | the coupon code |
+| `customer_id` | int | no | just in case if user are connected |
+| **items** | array | **Required.** An array of objects representing the cart. |
+| **items[].id** | integer | **Required.** The product ID. |
+| **items[].quantity** | integer | **Required.** The quantity of this item. |
+| **items[].color** | string | Optional. The selected color ID. |
+| **items[].variant** | object | Optional. The selected variant object (from product details). |
+
+**response format if `coupon_code` is valid**
+```json
+{
+    "success": true,
+    "message": "Coupon applied successfully!",
+    "coupon_code": "test",
+    "discount_amount": 10,
+    "original_subtotal": 65,
+    "new_total": 55,
+    "free_shipping": false,
+    "currency_symbol": "MAD",
+    "currency_code": "MAD"
+}
+```
+
+**response format if `coupon_code` is invalid**
+```json
+{
+    "success": false,
+    "message": "Coupon code not found."
+}
+```
+
+
 ### DELETE `/cart/clear`
 
 !!! warning "Token Requirement"
