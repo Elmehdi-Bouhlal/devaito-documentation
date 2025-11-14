@@ -1422,14 +1422,14 @@ Apply a coupon code to the current cart.
 
 ---
 
-### **Headers**
+**Headers**
 | Key | Type | Required | Description |
 |-----|------|----------|-------------|
 | **store-currency** | string | no | Optional. The currency code used by the user (e.g., MAD, USD, EUR). If not provided, the API will use the store default currency. |
 
 ---
 
-### **Request Body**
+**Request Body**
 | Name | Type | Required | Description |
 |------|------|-----------|-------------|
 | `coupon_code` | string | yes | The coupon code to apply. |
@@ -1442,7 +1442,7 @@ Apply a coupon code to the current cart.
 
 ---
 
-### **Response (Valid `coupon_code`)**
+**Response (Valid `coupon_code`)**
 ```json
 {
     "success": true,
@@ -1459,7 +1459,7 @@ Apply a coupon code to the current cart.
 
 ---
 
-### **Response (Invalid `coupon_code`)**
+**Response (Invalid `coupon_code`)**
 ```json
 {
     "success": false,
