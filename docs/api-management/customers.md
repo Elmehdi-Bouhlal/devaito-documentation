@@ -1418,26 +1418,31 @@ Returns a list of available payment methods for the current store.
 
 ### POST `/cart/apply-coupon` 🟢
 
-By using you can apply a coupon to the cart 
+Apply a coupon code to the current cart.
 
+---
 
-**Required Headers**
-| Key | Type | Description |
-|-----|------|-------------|
-| **store-currency** | string | Optional The currency code that **user** is using in the application ex (e.g., MAD, USD, EUR). in case if you don't have a currency code, the API will use the default currency. |
+### **Headers**
+| Key | Type | Required | Description |
+|-----|------|----------|-------------|
+| **store-currency** | string | no | Optional. The currency code used by the user (e.g., MAD, USD, EUR). If not provided, the API will use the store default currency. |
 
-**Request body**
+---
+
+### **Request Body**
 | Name | Type | Required | Description |
 |------|------|-----------|-------------|
-| `coupon_code` | string | yes | the coupon code |
-| `customer_id` | int | no | just in case if user are connected |
-| **items** | array | yes | **Required.** An array of objects representing the cart. |
-| **items[].id** | integer | yes | **Required.** The product ID. |
-| **items[].quantity** | integer | yes | **Required.** The quantity of this item. |
-| **items[].color** | string | no | Optional. The selected color ID. |
-| **items[].variant** | object | no | Optional. The selected variant object (from product details). |
+| `coupon_code` | string | yes | The coupon code to apply. |
+| `customer_id` | integer | no | Optional. Only required if the user is logged in. |
+| `items` | array | yes | An array of cart items. |
+| `items[].id` | integer | yes | The product ID. |
+| `items[].quantity` | integer | yes | Quantity of the product. |
+| `items[].color` | string | no | Optional. Selected color ID. |
+| `items[].variant` | object | no | Optional. Selected variant object (from product details). |
 
-**response format if `coupon_code` is valid**
+---
+
+### **Response (Valid `coupon_code`)**
 ```json
 {
     "success": true,
@@ -1452,7 +1457,9 @@ By using you can apply a coupon to the cart
 }
 ```
 
-**response format if `coupon_code` is invalid**
+---
+
+### **Response (Invalid `coupon_code`)**
 ```json
 {
     "success": false,
